@@ -42,6 +42,21 @@ const users = [
 ];
 
 app.get("/users", (req, res) => {
+  const search = req.query.search;
+  //use query parameter
+
+  if (search) {
+    const searchResult = users.filter((user) =>
+      user.name.toLocaleLowerCase().includes(search)
+    );
+    res.send(searchResult);
+  } 
+  else {
+    res.send(users);
+  }
+});
+
+app.get("/users", (req, res) => {
   res.send(users);
 });
 
@@ -51,6 +66,8 @@ app.get("/users/:id", (req, res) => {
   const user = users[id];
   res.send(user);
 });
+
+app.get;
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
