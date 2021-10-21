@@ -10,4 +10,4 @@ express install ------- cmd
   "test": "echo \"Error: no test specified\" && exit 1"
   }
 
-  npm run start-dev
+  npm run start-dev ----cmd
