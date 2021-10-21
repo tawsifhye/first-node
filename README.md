@@ -17,3 +17,9 @@ express install ------- cmd
 
 ### use query parameter
 - req.query.search
+
+### Middleware [cros]
+- npm install cors --- cmd
+
+var cors = require('cors')
+app.use(cors())
