@@ -11,3 +11,9 @@ express install ------- cmd
   }
 
   npm run start-dev ----cmd
+
+### dynamic api
+- req.params.id
+
+### use query parameter
+- req.query.search
