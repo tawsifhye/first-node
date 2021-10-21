@@ -69,7 +69,11 @@ app.get("/users/:id", (req, res) => {
   res.send(user);
 });
 
-app.get;
+//app.METHOD
+app.post("/users", (req, res) => {
+  console.log('hitting the post');
+  res.send('inside post');
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
