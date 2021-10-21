@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const app = express();
 app.use(cors());
+app.use(express.json());
 const port = process.env.PORT || 5000;
 
 // const handler = (req, res) => {
@@ -71,8 +72,12 @@ app.get("/users/:id", (req, res) => {
 
 //app.METHOD
 app.post("/users", (req, res) => {
-  console.log('hitting the post');
-  res.send('inside post');
+  const newUser = req.body;
+  newUser.id = users.length;
+  users.push(newUser);
+  console.log('hitting the post', req.body);
+  // res.send(JSON.stringify(newUser));
+  res.json(newUser);
 })
 
 app.listen(port, () => {
