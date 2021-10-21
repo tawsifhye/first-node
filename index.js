@@ -41,10 +41,9 @@ const users = [
   },
 ];
 
+//use query parameter
 app.get("/users", (req, res) => {
   const search = req.query.search;
-  //use query parameter
-
   if (search) {
     const searchResult = users.filter((user) =>
       user.name.toLocaleLowerCase().includes(search)
@@ -60,6 +59,7 @@ app.get("/users", (req, res) => {
   res.send(users);
 });
 
+//dynamic api
 app.get("/users/:id", (req, res) => {
   const id = req.params.id;
   //   console.log(req.params);
